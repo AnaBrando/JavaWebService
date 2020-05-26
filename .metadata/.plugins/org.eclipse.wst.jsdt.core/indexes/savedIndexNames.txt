@@ -1,2 +1,1 @@
 INDEX VERSION 1.4+C:\LP4\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1456107246.index

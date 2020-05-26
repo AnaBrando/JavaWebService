@@ -1,6 +1,7 @@
 package br.edu.ifms.http;
 
 import javax.persistence.Column;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement

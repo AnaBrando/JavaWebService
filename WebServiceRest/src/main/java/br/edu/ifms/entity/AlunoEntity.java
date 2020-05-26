@@ -18,7 +18,7 @@ public class AlunoEntity {
 	@Column(name = "ra")
 	private String ra;
 	
-	@Column(name = "sexo")
+	@Column(name = "nome")
 	private String nome;
 
 	public Integer getCodigo() {

@@ -7,15 +7,23 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\LP4\WebServiceRest"/>
+			<item value="C:\LP4\ClientAtividadeRest"/>
+			<item value="C:\Users\anabr\Downloads\web-service-master\WebServiceRest"/>
+			<item value="C:\Users\anabr\Downloads\web-service-master"/>
 			<item value="C:\Users\anabr\Downloads\ClientAtividadeRest"/>
 			<item value="C:\LP4\Client"/>
-			<item value="C:\LP4\ClientAtividadeRest"/>
-			<item value="C:\LP4\WebServiceRest"/>
 			<item value="C:\LP4\WebServiceAtividadeRest"/>
 			<item value="C:\LP4\lp4-ana"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 	</section>
 </section>

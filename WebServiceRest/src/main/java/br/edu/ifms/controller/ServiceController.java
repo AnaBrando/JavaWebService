@@ -3,13 +3,13 @@ package br.edu.ifms.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.websocket.server.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import br.edu.ifms.entity.AlunoEntity;
 import br.edu.ifms.http.Aluno;
@@ -64,7 +64,7 @@ public class ServiceController {
 	
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/todasalunos")
+	@Path("/todosAlunos")
 	public List<Aluno> TodasPessoas() {
 		List<Aluno> alunos = new ArrayList<>();
 		List<AlunoEntity> listaEntityPessoas = alunoRepository.TodasAlunos();

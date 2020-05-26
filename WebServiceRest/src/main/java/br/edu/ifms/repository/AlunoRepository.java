@@ -34,7 +34,7 @@ public class AlunoRepository {
 	
 	@SuppressWarnings("unchecked")
 	public List<AlunoEntity> TodasAlunos(){
-		return this.entityManager.createQuery("Select a from AlunoEntity a ORDER BY a.tipo").getResultList();
+		return this.entityManager.createQuery("Select a from AlunoEntity a ORDER BY a.nome").getResultList();
 	}
 	
 	public AlunoEntity GetAluno(Integer codigo){
