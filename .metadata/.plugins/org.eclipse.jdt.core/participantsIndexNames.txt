@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\LP4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1642141096.index
+\WebServiceAtividadeRest\src\main\java
+C:\LP4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3279692574.index
+\WebServiceRest\src\main\resources
+C:\LP4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3524081254.index
+\WebServiceRest\src\main\resources
+C:\LP4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3678637345.index
+\AnaWebService\src\main\java

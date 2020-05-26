@@ -1,0 +1,12 @@
+package br.edu.ifms.entity;
+
+public class Aluno {
+	
+	private int codigo;
+	private String ra;
+	private String nome;
+	private int anoPublicacao;
+	
+	
+
+}

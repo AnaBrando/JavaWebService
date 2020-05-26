@@ -1,0 +1,148 @@
+package br.edu.ifms.cliente;
+
+import javax.swing.JOptionPane;
+
+import br.edu.ifms.entity.Aluno;
+import br.edu.ifms.entity.Alunos;
+import br.edu.ifms.service.ServiceClient;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	  String opcao = JOptionPane.showInputDialog(null,
+          		"Escolha uma opção: \n" + " 1-CADASTRAR | 2-CONSULTAR | 3-EXCLUIR | 4-ALTERAR | 5-LISTAR TODOS",
+          		"OPÇÕES", JOptionPane.PLAIN_MESSAGE);
+          if(opcao == null) 
+          	System.exit(0);
+          switch(Integer.parseInt(opcao)) {
+          	case 1:
+          		Cadastrar();
+          	break;
+          	case 2:
+          		Consultar();
+          	break;
+          	case 3:
+          		Excluir();
+          	break;
+          	case 4:
+          		Alterar();
+          	break;
+          	case 5:
+          		ListarTodos();
+          	break;
+          	default:
+          		JOptionPane.showMessageDialog(null, "Opção inválida!");
+          }
+      }
+      public static void Cadastrar() {
+      	ServiceClient client = new ServiceClient();
+      	
+      	String nome = JOptionPane.showInputDialog(null, "Titulo:", "Novo Cadastro", JOptionPane.PLAIN_MESSAGE);
+      	String ra = JOptionPane.showInputDialog(null, "Autor:", "Novo Cadastro", JOptionPane.PLAIN_MESSAGE);
+      
+      	
+      	Aluno aluno = new Aluno();
+      	aluno.setNome(nome);
+      	aluno.setRa(ra);
+      	
+      	String resultado = client.CadastrarLivro(aluno);
+      	
+      	JOptionPane.showMessageDialog(null, resultado);
+      	
+      	main(null);
+      	
+      }
+      public static void Consultar() {
+      	ServiceClient client = new ServiceClient();
+      	
+      	String codigo = JOptionPane.showInputDialog(null, "Informe o código para consulta:", "Consultar",
+      			JOptionPane.PLAIN_MESSAGE);
+      	
+      	Aluno aluno = client.ConsultarLivroPorCodigo(Integer.parseInt(codigo));
+      	
+      	if(aluno == null) {
+      		JOptionPane.showMessageDialog(null, "Livro não encontrado! :-(");
+      		main(null);
+      	} else {
+      		String resultado = null;
+      		
+      		resultado = "Código: " + String.valueOf(aluno.getCodigo()) + "\n";
+      		resultado += "Nome: " + aluno.getNome() + "\n";
+      		resultado += "RA: " + aluno.getRa() + "\n";
+      		
+      		
+      		JOptionPane.showMessageDialog(null, resultado);
+      		
+      		main(null);
+      	}
+      }
+      public static void Excluir() {
+      	ServiceClient client = new ServiceClient();
+      	
+      	String codigo = JOptionPane.showInputDialog(null, "Informe o código para excluir:", "Excluir",
+      			JOptionPane.PLAIN_MESSAGE);
+      	String resultado = client.ExcluirLivroPorCodigo(Integer.parseInt(codigo));
+      	
+      	JOptionPane.showMessageDialog(null, resultado);
+      	
+      	main(null);
+      }
+      public static void Alterar() {
+      	
+      	ServiceClient client = new ServiceClient();
+      	
+      	String codigo = (String) JOptionPane.showInputDialog(null, "Informe o código para alteração:", "Alterar",
+      			JOptionPane.PLAIN_MESSAGE);
+      	Aluno aluno = client.ConsultarLivroPorCodigo(Integer.parseInt(codigo));
+      	
+      	if(aluno == null) {
+      		JOptionPane.showMessageDialog(null, "Livro não encontrado! :-(");
+      		main(null);
+      	} else {
+      		String nome = (String) JOptionPane.showInputDialog(null, "Nome: ",
+      				"Alterar registro - Código:" + aluno.getCodigo(), JOptionPane.PLAIN_MESSAGE, null, null, 
+      				aluno.getNome());
+      		String ra = (String) JOptionPane.showInputDialog(null, "Ra: ",
+      				"Alterar registro - Código:" + aluno.getCodigo(), JOptionPane.PLAIN_MESSAGE, null, null, 
+      				aluno.getRa());
+      		
+      		
+      		aluno.setNome(nome);
+      		aluno.setRa(ra);
+      		
+      		String resultado = client.AlterarLivro(aluno);
+      		
+      		JOptionPane.showMessageDialog(null, resultado);
+          	
+          	main(null);
+      		
+      	}
+      	
+      }
+      public static void ListarTodos() {
+      	ServiceClient client = new ServiceClient();
+      	
+      	Alunos alunos = client.ConsultarTodosLivros();
+      	
+      	StringBuilder stringBuilderDetalhesLivro = new StringBuilder();
+      	
+      	for(Aluno aluno : alunos) {
+      		stringBuilderDetalhesLivro.append("Código: ");
+      		stringBuilderDetalhesLivro.append(aluno.getCodigo());
+      		stringBuilderDetalhesLivro.append(" Nome: ");
+      		stringBuilderDetalhesLivro.append(aluno.getNome());
+      		stringBuilderDetalhesLivro.append(" RA: ");
+      		stringBuilderDetalhesLivro.append(aluno.getRa());
+      		stringBuilderDetalhesLivro.append("\n\n");
+      	}
+      	
+      	JOptionPane.showMessageDialog(null, stringBuilderDetalhesLivro.toString());
+      	
+      	main(null);
+      }
+}

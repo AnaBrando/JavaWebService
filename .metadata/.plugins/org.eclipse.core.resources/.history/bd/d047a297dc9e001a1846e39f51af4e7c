@@ -1,0 +1,29 @@
+package br.edu.ifms.http;
+
+import javax.persistence.Column;
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlRootElement
+public class Aluno {
+	
+	private Integer codigo;
+	
+	private String nome;
+	
+	private String ra;
+	
+	
+
+	public Aluno() {
+	}
+	
+	public Aluno(Integer codigo, String nome, String ra) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.ra = ra;
+		
+	}
+
+	
+}
