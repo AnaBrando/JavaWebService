@@ -53,7 +53,7 @@ public class ServiceController {
 			entity.setRa(aluno.getRa());
 			entity.setCodigo((aluno.getCodigo()));
 			
-			alunoRepository.salvar(entity);
+			alunoRepository.Alterar(entity);
 			
 			return "Registro alterado com sucesso";
 		}
@@ -76,8 +76,8 @@ public class ServiceController {
 	
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/getaluno/{codigo}")
-	public Aluno GetPessoa(@PathParam("codigo") Integer codigo) {
+	@Path("/getAluno/{codigo}")
+	public Aluno GetAluno(@PathParam("codigo") Integer codigo) {
 		AlunoEntity entity = alunoRepository.GetAluno(codigo);
 		if(entity != null) {
 			return new Aluno(entity.getCodigo(), entity.getNome(), entity.getRa());
